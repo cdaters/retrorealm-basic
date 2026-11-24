@@ -1,0 +1,12 @@
+import assert from 'node:assert/strict';import fs from 'node:fs/promises';import {pathToFileURL} from 'node:url';
+const pw=await import(process.env.PLAYWRIGHT_MODULE||'playwright'),results=[];await fs.mkdir('.local',{recursive:true});
+for(const engine of ['chromium','firefox','webkit'])for(const mobile of [false,true]){
+ const b=await pw[engine].launch(),c=await b.newContext({viewport:mobile?{width:390,height:844}:{width:1440,height:1000},hasTouch:mobile}),p=await c.newPage(),errors=[];p.on('pageerror',e=>errors.push(e.message));await c.route(/^https?:/,r=>r.abort());await p.goto(pathToFileURL(process.cwd()+'/dist/computer/index.html').href);
+ const input=p.locator('#decision'),idle=()=>p.waitForFunction(()=>document.body.dataset.pending==='false');await idle();async function cmd(s){await input.fill(s);await input.press('Enter');await idle();}
+ await cmd('RUN');await p.locator('#status').filter({hasText:'INPUT'}).waitFor();await cmd('EXPLORER');await p.locator('#status').filter({hasText:'STOPPED'}).waitFor();await cmd('CONT');await p.locator('#status').filter({hasText:'ENDED'}).waitFor();
+ await cmd('EDIT 10');assert.match(await input.inputValue(),/^10 REM/);await input.press('Escape');await idle();await cmd('LIST');assert.match(await p.locator('#output').innerText(),/10 REM/);
+ await p.locator('#editor-panel summary').click();await p.locator('#source').fill('10 PRINT "SOURCE WORKS"\n20 END');await p.locator('#apply').click();await idle();await cmd('RUN');await p.locator('#status').filter({hasText:'ENDED'}).waitFor();assert.match(await p.locator('#output').innerText(),/SOURCE WORKS/);
+ for(const color of ['green','amber','white']){await p.locator('#phosphor').selectOption(color);assert.equal(await p.locator('body').getAttribute('data-theme'),color);}await p.locator('#columns').selectOption(mobile?'40':'80');await p.locator('#phosphor').selectOption('green');await input.scrollIntoViewIfNeeded();await p.screenshot({path:'.local/'+engine+'-'+(mobile?'mobile':'desktop')+'.png'});assert.deepEqual(errors,[]);assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));
+ results.push({engine,version:b.version(),mobile,offline:true,sourceEditing:true,stopCont:true,errors});await c.close();await b.close();
+}
+await fs.writeFile('.local/browser-results.json',JSON.stringify(results,null,2)+'\n');console.log('Six independent offline Computer/browser cases PASS');

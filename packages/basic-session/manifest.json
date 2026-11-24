@@ -1,0 +1,16 @@
+{
+  "manifestVersion": 1,
+  "id": "basic-session",
+  "executionType": "basic-interpreter",
+  "version": "0.7.0",
+  "title": "RetroRealm BASIC Computer",
+  "entrypoint": "assets/environments/basic-session/index.html",
+  "profiles": [
+    "tiny",
+    "ms8k",
+    "trs80",
+    "swbasic"
+  ],
+  "prototype": true,
+  "historicalSourcesIncluded": false
+}

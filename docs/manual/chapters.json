@@ -1,0 +1,54 @@
+[
+  {
+    "id": "index",
+    "title": "RetroRealm BASIC manual"
+  },
+  {
+    "id": "getting-started",
+    "title": "Your first program"
+  },
+  {
+    "id": "workspace",
+    "title": "Running, editing and saving"
+  },
+  {
+    "id": "language",
+    "title": "Language reference"
+  },
+  {
+    "id": "dialects",
+    "title": "Choose a language profile"
+  },
+  {
+    "id": "tiny",
+    "title": "Tiny BASIC subset"
+  },
+  {
+    "id": "ms8k",
+    "title": "Microsoft 8K subset"
+  },
+  {
+    "id": "swbasic",
+    "title": "Simple Web Basic subset"
+  },
+  {
+    "id": "trs80",
+    "title": "TRS-80 Level II subset"
+  },
+  {
+    "id": "devices",
+    "title": "Virtual media and devices"
+  },
+  {
+    "id": "programmer",
+    "title": "Programmer\u2019s guide"
+  },
+  {
+    "id": "examples",
+    "title": "Examples and tutorials"
+  },
+  {
+    "id": "troubleshooting",
+    "title": "Errors and troubleshooting"
+  }
+]

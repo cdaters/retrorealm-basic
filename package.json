@@ -1,0 +1,17 @@
+{
+  "name": "retrorealm-basic",
+  "version": "0.7.0",
+  "type": "module",
+  "private": true,
+  "description": "Independent BASIC interpreter and offline BASIC Computer",
+  "exports": "./index.js",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "package": "python3 scripts/package.py"
+  }
+}

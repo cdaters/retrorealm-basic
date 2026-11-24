@@ -1,0 +1,4 @@
+{
+  "title": "Choose a language profile",
+  "body": "<p>A dialect is a compatibility contract, not a cosmetic setting. Import never guesses or changes it; an example explicitly selects its documented profile. Incorrect profiles can change variable names, truth values, INPUT or RNG behavior. Preserve your reference source and choose the appropriate profile first.</p><div class=\"cards\"><a href=\"tiny.html\">Tiny BASIC</a><a href=\"ms8k.html\">Microsoft 8K</a><a href=\"swbasic.html\">Simple Web Basic</a><a href=\"trs80.html\">TRS-80 Level II</a></div><p>All are bounded subsets. None claims exact hardware memory, timing or historical RNG. Host double precision differs from machine-specific arithmetic. BBC BASIC and a general ROM emulator are outside this version.</p>"
+}

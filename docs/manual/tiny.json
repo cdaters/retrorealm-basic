@@ -1,0 +1,4 @@
+{
+  "title": "Tiny BASIC subset",
+  "body": "<p>Use for simple integer listings. Names have one significant character; keyword recognition may split names. Numeric expression results truncate toward zero, true is 1, and RND(n) draws an integer 1…n for positive n. INPUT accepts a numeric expression, with the same evaluation budgets. String variables are rejected; quoted PRINT messages work.</p><p>The shared grammar admits some conveniences beyond historical Tiny implementations. Signed-word overflow, precise historical errors and machine RNG are not emulated. Do not describe this as a particular original Tiny ROM. Try the Five tiny squares example.</p>"
+}

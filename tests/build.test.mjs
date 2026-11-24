@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
+test('source tree has no Grav coupling or runtime package dependencies',()=>{const pkg=JSON.parse(fs.readFileSync('package.json'));assert.deepEqual(pkg.dependencies??{},{});for(const file of fs.readdirSync('packages/basic')){const text=fs.readFileSync('packages/basic/'+file,'utf8');assert.doesNotMatch(text,/from ['"](?:https?:|.*grav)|\bfetch\(/);}});

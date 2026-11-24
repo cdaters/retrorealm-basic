@@ -1,0 +1,9 @@
+[
+ {"id":"hello","title":"Hello, BASIC","dialect":"ms8k","description":"Your first conversation with a program.","inputs":["EXPLORER"]},
+ {"id":"countdown","title":"Countdown & continue","dialect":"ms8k","description":"Loops, a subroutine, STOP and CONT.","inputs":[]},
+ {"id":"arrays","title":"A pocket observatory","dialect":"ms8k","description":"Arrays, DATA, a mean and a user function.","inputs":[]},
+ {"id":"tiny-squares","title":"Five tiny squares","dialect":"tiny","description":"One-letter variables and an integer loop.","inputs":[]},
+ {"id":"web-names","title":"Names that matter","dialect":"swbasic","description":"Full identifiers and case-sensitive variables.","inputs":[]},
+ {"id":"virtual-notebook","title":"Virtual notebook","dialect":"trs80","description":"Write and read a named virtual file. Replaces notebook.","inputs":[]},
+ {"id":"observatory","title":"Observatory tour","dialect":"ms8k","description":"The original guided demo; enter a name, then CONT.","inputs":["EXPLORER"]}
+]
