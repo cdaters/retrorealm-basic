@@ -2,7 +2,7 @@
 
 An independent JavaScript BASIC interpreter and offline BASIC Computer. Write numbered programs, edit source, choose a compatibility profile, and keep portable copies of your work. No Grav installation, account, CDN, telemetry or runtime package dependency is required.
 
-**v0.7.0 public beta · beta1.** Apache-2.0, copyright Craig Daters. See [LICENSE](LICENSE) and [NOTICE](NOTICE). [Release downloads](https://github.com/cdaters/retrorealm-basic/releases/tag/v0.7.0).
+**v0.7.1 public beta · beta1.** Apache-2.0, copyright Craig Daters. See [LICENSE](LICENSE) and [NOTICE](NOTICE). [Release downloads](https://github.com/cdaters/retrorealm-basic/releases/tag/v0.7.1).
 
 ## Build and use
 

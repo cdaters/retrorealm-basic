@@ -1,4 +1,4 @@
-# RetroRealm BASIC 0.7.0 — standalone runtime public beta · beta1
+# RetroRealm BASIC 0.7.1 — standalone runtime public beta · beta1
 
 Dependency-free ES modules. Import from index.js in a trusted Node or browser Worker host. The modules require modern JavaScript (Node 22+ for local tests). No Grav, DOM, native game module or third-party interpreter is required.
 

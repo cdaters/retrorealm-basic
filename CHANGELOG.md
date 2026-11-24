@@ -1,3 +1,9 @@
+# 0.7.1
+## 2026-11-24
+
+1. [](#bugfix)
+    * Keep the public beta feedback address readable under Cloudflare email obfuscation without enabling scripts in the manual.
+
 # 0.7.0
 ## 2026-11-24
 

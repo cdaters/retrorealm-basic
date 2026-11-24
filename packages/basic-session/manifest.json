@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "basic-session",
   "executionType": "basic-interpreter",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "title": "RetroRealm BASIC Computer",
   "entrypoint": "assets/environments/basic-session/index.html",
   "profiles": [

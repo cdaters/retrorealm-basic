@@ -1,4 +1,4 @@
-# RetroRealm BASIC Computer 0.7.0 — public beta · beta1
+# RetroRealm BASIC Computer 0.7.1 — public beta · beta1
 
 Open `index.html` in a current browser. Choose an original example, type RUN, or start a blank program. No web server, account, framework or network is required. The complete HTML guide is in `manual/index.html`; beta/privacy/feedback information is in `manual/about.html`.
 
