@@ -1,7 +1,12 @@
-# Attribution and dependencies — beta1-review
+# Third-party notices
 
-The distributed interpreter and browser application have no third-party runtime JavaScript dependencies, downloaded fonts, artwork, telemetry or CDN requirement. Included BASIC examples are original project material. Source authorship and final copyright-holder attribution remain subject to owner confirmation; see license-proposal/NOTICE.
+RetroRealm BASIC is independently maintained, Apache-2.0 project software;
+see LICENSE and NOTICE for attribution. No third-party runtime JavaScript
+packages, downloaded fonts, artwork, telemetry or CDN are required. Included
+BASIC examples are original project material.
 
-The optional plugin relies on the separately installed Grav host, its theme and their dependencies. None are included. Their existing license terms remain applicable. Compatibility names such as Microsoft 8K, Tiny BASIC, Simple Web Basic and TRS-80 identify incomplete language profiles, without endorsement or a trademark grant.
-
-Private development tools and comparison interpreters are not shipped or linked into these artifacts. The proposed Apache license text is reproduced unchanged from https://www.apache.org/licenses/LICENSE-2.0.txt solely as a license proposal. This does not imply ASF endorsement or an active Apache license grant for this project.
+No historical games, ROMs, scans, research tools or comparison interpreters
+are distributed. Historical packages installed separately retain their own
+copyright and attribution; this software license does not relicense them.
+Development-only test tools and browser binaries are separately installed
+under their respective upstream licenses and are not runtime dependencies.

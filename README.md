@@ -2,7 +2,7 @@
 
 An independent JavaScript BASIC interpreter and offline BASIC Computer. Write numbered programs, edit source, choose a compatibility profile, and keep portable copies of your work. No Grav installation, account, CDN, telemetry or runtime package dependency is required.
 
-**0.7.0 · split1-review.** Source export and release preparation; Apache-2.0 is proposed, not applied. See [LICENSE-PENDING.md](LICENSE-PENDING.md) and [proposed notices](license-proposal/NOTICE). Public publication awaits owner approval.
+**v0.7.0 public beta · beta1.** Apache-2.0, copyright Craig Daters. See [LICENSE](LICENSE) and [NOTICE](NOTICE). [Release downloads](https://github.com/cdaters/retrorealm-basic/releases/tag/v0.7.0).
 
 ## Build and use
 
@@ -30,4 +30,4 @@ The source of truth is `packages/`, `samples/basic/` and `docs/manual/`. The dep
 
 This repository contains no historical games, proprietary research, private development history or production configuration. The separately maintained `grav-plugin-retrorealm-basic-lab` integration vendors a verified, version-pinned Computer release. Updating that host never requires an online runtime download.
 
-No public tracker has been created yet. Until a contact channel is approved, collect minimal original reproductions with version, browser, profile, seed and error; do not share private source or historical copyrighted listings. Human screen-reader/physical-device testing remains distinct from browser automation.
+Report beta feedback to [craig@daters.net](mailto:craig@daters.net) or [GitHub issues](https://github.com/cdaters/retrorealm-basic/issues). Include a minimal original reproduction, version, browser, profile, seed and error; do not share private source or copyrighted listings. Send security-sensitive reports by email. Human VoiceOver and physical-device testing remain follow-up work; automated browser checks are not a substitute.

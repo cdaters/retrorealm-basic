@@ -6,4 +6,4 @@ Limits reduce resource exhaustion but are not a complete browser/OS sandbox. The
 
 No telemetry or cloud service is used. Browser storage, exports and in-tab media stay local unless shared. Hosting a page still generates ordinary server access requests/logs and may use host cookies. Extensions and other same-origin applications are outside the boundary. Browser file-URL storage varies; export important work.
 
-No public security contact exists until publication approval. Do not put credentials, personal data or private program text in a public issue. A later owner-approved contact belongs in this file and the manual. These tests are not a security certification.
+Send security reports privately to craig@daters.net. Do not put credentials, personal data or private program text in public issues. Automated checks are not a security certification. Human VoiceOver and physical-device testing remain documented public-beta follow-up work.

@@ -35,17 +35,17 @@ await copy('docs/manual/manual.css',c+'/manual/manual.css');
 for(const [i,ch]of chapters.entries()){
  const {title,body}=JSON.parse(await readFile('docs/manual/'+ch.id+'.json','utf8'));
  const nav=chapters.map(x=>`<a href="${x.id}.html"${x.id===ch.id?' aria-current="page"':''}>${escape(x.title)}</a>`).join('');
- await writeFile(c+'/manual/'+ch.id+'.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'"><title>${escape(title)} · RetroRealm BASIC</title><link rel="stylesheet" href="manual.css"><body><a class="skip" href="#chapter">Skip to chapter</a><header><a href="index.html">RETROREALM BASIC / MANUAL</a><a href="../index.html">Open BASIC Computer →</a></header><div class="layout"><nav aria-label="Manual chapters">${nav}</nav><main id="chapter"><h1>${escape(title)}</h1>${body}<footer>RetroRealm BASIC ${release.version} · ${release.build} · License approval pending${chapters[i+1]?`<p><a href="${chapters[i+1].id}.html">Next: ${escape(chapters[i+1].title)} →</a></p>`:''}<p><a href="about.html">Beta, privacy &amp; feedback</a></p></footer></main></div></body></html>`);
+ await writeFile(c+'/manual/'+ch.id+'.html',`<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'"><title>${escape(title)} · RetroRealm BASIC</title><link rel="stylesheet" href="manual.css"><body><a class="skip" href="#chapter">Skip to chapter</a><header><a href="index.html">RETROREALM BASIC / MANUAL</a><a href="../index.html">Open BASIC Computer →</a></header><div class="layout"><nav aria-label="Manual chapters">${nav}</nav><main id="chapter"><h1>${escape(title)}</h1>${body}<footer>RetroRealm BASIC ${release.version} · ${release.build} · Apache-2.0 · public beta${chapters[i+1]?`<p><a href="${chapters[i+1].id}.html">Next: ${escape(chapters[i+1].title)} →</a></p>`:''}<p><a href="about.html">Beta, privacy &amp; feedback</a></p></footer></main></div></body></html>`);
 }
 await copy('docs/about.html',c+'/manual/about.html');
 for(const name of ['devices.js','machine.js','parser.js','profiles.js','program.js','session.js'])await copy('packages/basic/'+name,r+'/lib/'+name);
 await copy('runtime-index.js',r+'/index.js');
-await writeFile(r+'/package.json',JSON.stringify({name:'retrorealm-basic',version:release.version,type:'module',private:true,exports:'./index.js',engines:{node:'>=22'}},null,2)+'\n');
+await writeFile(r+'/package.json',JSON.stringify({name:'retrorealm-basic',version:release.version,type:'module',private:true,license:'Apache-2.0',exports:'./index.js',engines:{node:'>=22'}},null,2)+'\n');
 await tree(c+'/manual',r+'/manual');await tree(c+'/examples',r+'/examples');
 for(const f of (await readdir(r+'/manual')).filter(x=>x.endsWith('.html'))){const p=r+'/manual/'+f;await writeFile(p,(await readFile(p,'utf8')).replace('<a href="../index.html">Open BASIC Computer →</a>','<a href="../README.md">Runtime guide</a>'));}
 for(const [dir,kind]of [[c,'COMPUTER'],[r,'RUNTIME']]){
- for(const f of ['LICENSE-PENDING.md','THIRD-PARTY-NOTICES.md','CHANGELOG.md'])await copy(f,dir+'/'+f);
- await tree('license-proposal',dir+'/license-proposal');await copy('docs/README-'+kind+'.md',dir+'/README.md');
+ for(const f of ['LICENSE','NOTICE','THIRD-PARTY-NOTICES.md','CHANGELOG.md'])await copy(f,dir+'/'+f);
+ await copy('docs/README-'+kind+'.md',dir+'/README.md');
  await writeFile(dir+'/BUILD.json',JSON.stringify({...release,sourceCommit:commit},null,2)+'\n');
 }
 async function inventory(dir,prefix=''){let files=[];for(const e of await readdir(dir,{withFileTypes:true})){const name=prefix+e.name;if(e.isDirectory())files.push(...await inventory(dir+'/'+e.name,name+'/'));else{const b=await readFile(dir+'/'+e.name);files.push({path:name,bytes:b.length,sha256:sha(b)});}}return files.sort((a,b)=>a.path.localeCompare(b.path));}
